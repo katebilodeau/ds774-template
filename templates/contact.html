@@ -32,6 +32,7 @@
 
         <!-- Otherwise, show the contact form -->
         {% else %}
+        {% if session['user_id'] %}
         <!-- contact form -->
         <div class="col-sm">
             <form method="post" action="">
@@ -61,6 +62,9 @@
             </form>
         </div>
 
+        {% else %}
+        <h2>To add an issue to the log, please <a href="{{ url_for('admin')}}">login</a></h2>
+        {% endif %}
         {% endif %}
 
     </div>
