@@ -11,11 +11,23 @@ app.secret_key = "IAN"
 def home():
     return render_template('home.html')
 
-@app.route("/courses")
-def courses():
-    return render_template('courses.html')
+@app.route("/announcements")
+def announcements():
+    return render_template('announcements.html')
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route("/documents")
+def documents():
+    return render_template('documents.html')
+
+@app.route("/directory")
+def directory():
+    return render_template('directory.html')
+
+@app.route("/events")
+def events():
+    return render_template('events.html')
+
+@app.route('/contact', methods=['GET', 'POST'])*
 def contact():
     message = ''
     if request.method == 'POST':
@@ -32,7 +44,7 @@ def contact():
     else:
         return render_template('contact.html', message=message)
 
-@app.route("/admin", methods=['GET', 'POST'])
+@app.route("/admin", methods=['GET', 'POST'])*
 def admin():
     error = ''
     records = ''
