@@ -27,7 +27,7 @@ def directory():
 def events():
     return render_template('events.html')
 
-@app.route('/contact', methods=['GET', 'POST'])*
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     message = ''
     if request.method == 'POST':
@@ -44,7 +44,7 @@ def contact():
     else:
         return render_template('contact.html', message=message)
 
-@app.route("/admin", methods=['GET', 'POST'])*
+@app.route("/admin", methods=['GET', 'POST'])
 def admin():
     error = ''
     records = ''
