@@ -4,3 +4,9 @@ unh_site/*
 *.pyc
 flask_site/*
 __pycache__/app.cpython-37.pyc
+
+# virtual environment 
+myvenv
+
+# flask environment variables
+.flaskenv
