@@ -42,7 +42,7 @@ def contact_form(fname, lname, eaddress, message):
 
 def add_user(user, password):
     """ insert a new user into the users table """
-    sql = f"INSERT INTO users(username,password) VALUES('{user}','{password}') RETURNING user_id;"
+    sql = f"INSERT INTO Users(username,password) VALUES('{user}','{password}') RETURNING user_id;"
     conn = None
     user_id = None
 
