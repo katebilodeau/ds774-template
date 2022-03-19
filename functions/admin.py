@@ -6,7 +6,7 @@ def connect_to_db():
      # Connect to database
     try:
         # get database URL dynamically from Heroku
-        DATABASE_URL = os.environ['DATABASE_URL']
+        DATABASE_URL = os.environ['HEROKU_POSTGRESQL_ORANGE']
         
         # create connection with database
         connection = psycopg2.connect(DATABASE_URL, sslmode='require')

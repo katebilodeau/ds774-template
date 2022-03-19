@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}<title>Admin</title>{% endblock %}
-{% set active_page = "admin" %}
+{% block title %}<title>Issues Log</title>{% endblock %}
+{% set active_page = "issueslog" %}
 
 {% block content %}
 <!-- container for tablular structure: 1 row & 1 column -->
@@ -12,7 +12,7 @@
       {% if session['user_id'] %}
       <div class="form-group">
         <form action="" method="post" name="logout">
-          <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Logout" />
+          <input class="btn btn-primary btn-lg" name="issueslog" type="submit" value="Logout" />
         </form>
       </div>
 
@@ -39,9 +39,9 @@
             <td>{{ record[3] }}</td>
             <td>{{ record[4] }}</td>
             <td>
-              <form action={{ "/edit?id=" ~ record[0] }} method="post" name="admin"><input
-                  class="btn btn-primary btn-sm" name="admin" type="submit" value="Edit" /> <input
-                  class="btn btn-danger btn-sm" name="admin" type="submit" value="Delete" /></form>
+              <form action={{ "/edit?id=" ~ record[0] }} method="post" name="issueslog"><input
+                  class="btn btn-primary btn-sm" name="issueslog" type="submit" value="Edit" /> <input
+                  class="btn btn-danger btn-sm" name="issueslog" type="submit" value="Delete" /></form>
             </td>
           </tr>
           {% endfor %}
@@ -56,10 +56,10 @@
         {% if error %}
         <h3 style="color:red"> {{ error }} </h3>
         {% endif %}
-        <form action="" method="post" name="admin">
+        <form action="" method="post" name="issueslog">
           <input class="form-control" type="text" name="username" placeholder="Username" required /><br />
           <input class="form-control" type="password" name="password" placeholder="Password" required /> <br />
-          <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Login" />
+          <input class="btn btn-primary btn-lg" name="issueslog" type="submit" value="Login" />
           <a href="{{ url_for('register')}}" class="btn btn-primary btn-lg" role="button">Register</a>
         </form>
       </div>

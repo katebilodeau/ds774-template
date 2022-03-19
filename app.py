@@ -44,8 +44,8 @@ def contact():
     else:
         return render_template('contact.html', message=message)
 
-@app.route("/admin", methods=['GET', 'POST'])
-def admin():
+@app.route("/issueslog", methods=['GET', 'POST'])
+def issueslog():
     error = ''
     records = ''
     print(request)
@@ -54,7 +54,7 @@ def admin():
     if request.method == 'POST':
 
         # If the form was Login, perform log in steps
-        if request.form.get('admin') == 'Login':
+        if request.form.get('issueslog') == 'Login':
             username = request.form['username']
             password = request.form['password']
 
@@ -81,7 +81,7 @@ def admin():
         records = get_records()
 
     # return the admin page, showing any message or data that we may have
-    return render_template('admin.html', error = error, records = records)
+    return render_template('issueslog.html', error = error, records = records)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -93,11 +93,16 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        password2 = request.form['password2']
+
+        if password != password2:
+            error = "Passwords do not match."
+            return render_template('register.html', error = error)
 
         if get_user(username):
             new_id = add_user(username, password)
             error = "Registration sucessful. Please login"
-            return render_template('admin.html', error = error)
+            return render_template('issueslog.html', error = error)
         else:
             error = f"Username {username} not available"
         
