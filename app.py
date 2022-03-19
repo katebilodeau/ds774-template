@@ -99,7 +99,7 @@ def register():
             error = "Passwords do not match."
             return render_template('register.html', error = error)
 
-        if get_user(username):
+        if not get_user(username):
             new_id = add_user(username, password)
             error = "Registration sucessful. Please login"
             return render_template('issueslog.html', error = error)

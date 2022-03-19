@@ -70,7 +70,7 @@ def get_user(user):
 
     conn = connect_to_db()
 
-    sql = f"SELECT * FROM users WHERE username ='{user}';"
+    sql = f"SELECT * FROM Users WHERE username ='{user}';"
 
     try:
 
