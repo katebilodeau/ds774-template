@@ -3,26 +3,120 @@
 {% set active_page = "directory" %}
 
 {% block content %}
-<!-- container for tablular structure: 1 row & 1 column -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
+<h1> Exceutive Team </h1>
+<p>  <img src="{{url_for('static',filename='kate.jpg')}}" width = "200" height = "275" style =  "float: left" />
+  Kate Bilodeau
+  <br>
+  CEO
+  <br>
+  Email: kate.bilodeau@lending.org
+  <br>
+  Phone: (603) 486-6057
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-      <!-- Register Form -->
-      <div class="form-group">
-        <h1>Directory</h1>
-        <form action="" method="post" name="register">
-          <input class="form-control" type="text" name="username" placeholder="Username" required /><br />
-          <input class="form-control" type="password" name="password" placeholder="Password" required /> <br />
-          <input class="form-control" type="password" name="password2" placeholder="Password" required /> <br />
-          <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Login" />
-        </form>
-        {% if error %}
-        <h3 style="color:red"> {{ error }} </h3>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
+
+</p>
+
+<p>  <img src="{{url_for('static',filename='olivia.png')}}" width = "200" height = "250" style =  "float: left" />
+  Olivia Maietta
+  <br>
+  Vice President
+  <br>
+  Email: olivia.maietta@lending.org
+  <br>
+  Phone: (603) 668-2278
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</p>
+
+<p>  <img src="{{url_for('static',filename='sydney.png')}}" width = "200" height = "350" style =  "float: left" />
+  Sydney Socha
+  <br>
+  Chief Financial Officer
+  <br>
+  Email: sydney.socha@lending.org
+  <br>
+  Phone: (603) 882-5678
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+<br>
+</p>
+
+<h2>Consumer Lending Team</h2>
+
+<p>
+Nick Olibrice
+<br>
+Phone: (603) 576-8494
+<br>
+Email: nick.olibrice@lending.org
+<br>
+<br>
+</p>
+
+<p>
+  Paige Bohlig
+  <br>
+  Phone: (603) 374-4839
+  <br>
+  Email: paige.bohlig@lending.org
+  <br>
+  <br>
+  </p>
+
+  <p>
+    Gabby Paradis
+    <br>
+    Phone: (603) 384-5849
+    <br>
+    Email: gabby.paradis@lending.org
+    <br>
+    <br>
+    </p>
+
+    <p>
+      Bowen Bilodeau
+      <br>
+      Phone: (603) 384-9785
+      <br>
+      Email: bowen.bilodeau@lending.org
+      <br>
+      <br>
+      </p>
+
+      <p>
+        Lauren Reid
+        <br>
+        Phone: (603) 635-1627
+        <br>
+        Email: lauren.reid@lending.org
+        <br>
+        <br>
+        </p>
 
 {% endblock %}
