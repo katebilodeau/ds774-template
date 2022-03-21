@@ -121,14 +121,14 @@ def edit():
             message = request.form['message']
             print(fname, lname, eaddress, message)
             edit_record(msg_id, fname, lname, eaddress, message)
-            return redirect('/admin')
+            return redirect('/issueslog')
 
         elif request.form.get('edit') == 'cancel':
-            return redirect('/admin')
+            return redirect('/issueslog')
         
         elif request.form.get('admin') == 'Delete':
             delete_record(msg_id)
-            return redirect('/admin')
+            return redirect('/issueslog')
 
 
     entry = get_single_record(msg_id)
