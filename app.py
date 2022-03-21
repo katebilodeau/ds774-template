@@ -110,6 +110,7 @@ def register():
     return render_template('register.html', error = error, id = new_id)
 
 
+
 @app.route("/edit", methods=['GET', 'POST'])
 def edit():
     msg_id = request.args['id']
