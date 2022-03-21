@@ -72,7 +72,7 @@ def issueslog():
                 error = 'Invalid Username or Password'
         
         # if form was logout button, end user session
-        elif request.form.get('admin')  == 'Logout':
+        elif request.form.get('issueslog')  == 'Logout':
             session.pop('user_id')
 
         
