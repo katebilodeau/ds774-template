@@ -126,7 +126,7 @@ def edit():
         elif request.form.get('edit') == 'cancel':
             return redirect('/issueslog')
         
-        elif request.form.get('admin') == 'Delete':
+        elif request.form.get('issueslog') == 'Delete':
             delete_record(msg_id)
             return redirect('/issueslog')
 
