@@ -6,8 +6,8 @@ def connect_to_db():
      # Connect to database
     try:
         # get database URL dynamically from Heroku
-        #DATABASE_URL = os.environ['HEROKU_POSTGRESQL_ORANGE']
-        DATABASE_URL = 'postgres://yqdkjcpvusviou:5887a7ca41633c80da93b110ebb3e670ad29ec2c4d5c9ddcb16bea90af201280@ec2-3-212-45-192.compute-1.amazonaws.com:5432/dv2b1s2c2g1g5'
+        DATABASE_URL = os.environ['HEROKU_POSTGRESQL_ORANGE']
+        
         # create connection with database
         connection = psycopg2.connect(DATABASE_URL, sslmode='require')
 
@@ -79,12 +79,12 @@ def get_user(user):
         # execute the SELECT statement
         cur.execute(sql)
         # get the selected users back
-        users = cur.fetchall()
+        Users = cur.fetchall()
         # close communication with the database
         cur.close()
 
         # check if user with same name already exists
-        if len(users) >= 1:
+        if len(Users) >= 1:
             return False
         else:
             return True
@@ -100,7 +100,7 @@ def login_user(user, password):
     
     conn = connect_to_db()
 
-    sql = f"SELECT * FROM users WHERE username ='{user}' and password = '{password}';"
+    sql = f"SELECT * FROM Users WHERE username ='{user}' and password = '{password}';"
 
     try:
 
@@ -109,13 +109,13 @@ def login_user(user, password):
         # execute the SELECT statement
         cur.execute(sql)
         # get the selected users back
-        users = cur.fetchall()
+        Users = cur.fetchall()
         # close communication with the database
         cur.close()
 
         # check if user credentials were correct
-        if len(users) == 1:
-            return users[0][0]
+        if len(Users) == 1:
+            return Users[0][0]
         else:
             return False
 
